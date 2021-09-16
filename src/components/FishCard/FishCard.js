@@ -5,7 +5,10 @@ function FishCard(props) {
     return (
 			<main className='homepageHolder'>
 				<div className='card1'>
-					<img src='' alt='' />
+					<img
+						src="https://www.fishwatch.gov/sites/default/files/Hake_White_NB_W_0.png"
+						alt=''
+					/>
 					<h2 className='fishName'>Bass</h2>
 				</div>
 
@@ -31,7 +34,7 @@ function FishCard(props) {
 
 				<div className='card6'>
 					<img src='' alt='' />
-					<h2 className="fishName">Sunfish</h2>
+					<h2 className='fishName'>Sunfish</h2>
 				</div>
 			</main>
 		);
