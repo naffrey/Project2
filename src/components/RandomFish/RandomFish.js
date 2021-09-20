@@ -1,31 +1,35 @@
-import React, {useState, useEffect} from 'react';
-//import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import './RandomFishStyle.css';
 
-const RandomFish = (props) => {
-    const [fish, setFish] = useState();
-    //const {path} = useParams();
-	const url = 'https://www.fishwatch.gov/api/species';
+function RandomFish(props) {
+    const [fish, setFish] = useState([]);
+    //const {Path} = useParams();
+	const url =
+		'https://cors-anywhere.herokuapp.com/https://www.fishwatch.gov/api/species';
 
 
 		useEffect(() => {
-			fetch(url)
+			function getData() {fetch(url) 
 				.then((res) => res.json())
-				.then((res) => {setFish(res)
+				.then((json) => {
+					console.log(json) 
+					setFish(json)
 					})
-				.catch(console.error);
-			},[]);
+				.catch(console.error);}
+				getData()
+			},[]); 
 
-		if (!fish) {
+		if (!fish.length) {
 			return <p>Reeling...</p>;
 		}
 	
 
     return (
-			<section>
-				{fish.map((fish) => (
-					<div className='randomCard'>
-						<img className='mainFish' src='' alt='' />
+			<section className='singleFish'>
+				{fish.map(fishs =>{
+
+				return	<div className='randomCard'>
+						<img className='mainFish' src={fishs['Species Illustration Photo'].src} alt={fishs['Species Illustration Photo'].alt} />
 						<p>
 							Maybe I could add a little image selector here for the fish that
 							multiple photos. under the photo. SAME TO THE FISH CARDS.
@@ -34,29 +38,29 @@ const RandomFish = (props) => {
 							<h3>
 								<u>Name</u>
 							</h3>
-							<h4>{fish['species name']}</h4>
+							<h4>{fishs['Species Name']}</h4>
 							<h3>
 								<u>Location</u>
 							</h3>
-							<h4>{fish.Habitat}</h4>
+							<h4>{fishs.Location}</h4>
 
 							<h3>
 								<u>Physical Description</u>
 							</h3>
-							<h4>{fish.Physical}</h4>
+							<h4>{fishs.Physical}</h4>
 						</div>
 
 						<div className='bio'>
 							<h3>
 								<u>Biology</u>
 							</h3>
-							<p>{fish.biology}</p>
+							<p>{fishs.Biology}</p>
 						</div>
 					</div>
-				))}
+				})}
 			</section>
 		);
-
+					
 }
 
 
