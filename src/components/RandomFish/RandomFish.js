@@ -21,7 +21,20 @@ function RandomFish(props) {
 	}, []);
 
 	if (!fish.length) {
-		return <p>Reeling...</p>;
+		return (
+			<div>
+				<img
+					class='gif'
+					src='https://media.giphy.com/media/oVptPWVH26gSvClKX5/giphy.gif?cid=ecf05e4732e0hqpysutqqcktcpsylg01bh8bcv4mx22hp6v4&rid=giphy.gif&ct=g'
+					alt=' animated fishing man reeling'
+				/>
+
+				<p class='loading'>Reeling in your results <img class="dots"
+					src='https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif'
+					alt='loading screen dots'/></p>
+				
+			</div>
+		);
 	}
 
 	return (
@@ -34,35 +47,32 @@ function RandomFish(props) {
 							src={fishs['Species Illustration Photo'].src}
 							alt={fishs['Species Illustration Photo'].alt}
 						/>
-						<p>
-							Maybe I could add a little image selector here for the fish that
-							multiple photos. under the photo. SAME TO THE FISH CARDS.
-						</p>
+
 						<div className='basicInfo'>
 							<h3>
 								<u>Name</u>
 							</h3>
-							<h4>{fishs['Species Name']}</h4>
+							<div>{fishs['Species Name']}</div>
+
 							<h3>
 								<u>Location</u>
 							</h3>
 							<div dangerouslySetInnerHTML={{ __html: fishs.Location }} />
 
-							<h3>
-								<u>Physical Description</u>
-							</h3>
-							<h4>{fishs.Physical}</h4>
 						</div>
 
 						<div className='bio'>
+							<u>Physical Description</u>
+
+							<div
+								dangerouslySetInnerHTML={{
+									__html: fishs['Physical Description'],
+								}}
+							/>
 							<h3>
 								<u>Biology</u>
 							</h3>
-
-							<p>
-								<div dangerouslySetInnerHTML={{ __html: fishs.Biology }} />
-								{/* {fishs.Biology} */}
-							</p>
+							<div dangerouslySetInnerHTML={{ __html: fishs.Biology }} />
 						</div>
 					</div>
 				);

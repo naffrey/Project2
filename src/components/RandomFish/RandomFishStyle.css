@@ -2,8 +2,8 @@
     border: 2px solid gray;
     margin: 15px 15px 15px 15px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: minmax(1px, auto) 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-gap: 3px;
     background-color: lightcoral;
 }
@@ -21,13 +21,54 @@
 }
 
 .basicInfo{
-    grid-column: 3 / span 1 ;
+    grid-column: 3 / span 4 ;
     grid-row: 1 / span 1;
     background-color: white;
 }
 
 .bio{
-    grid-column: 1 / span 2 ;
-    grid-row: 2 / span 2 ;
-    background-color: white;
+    grid-column: 1 /span 6;
+    grid-row: 2 / span 3;
+
+}
+
+.loadingScreen{
+    align-self: center;
+
+}
+
+.gif{
+align-self: center;
+}
+.dots{
+    align-self: center;
+}
+
+.loading{
+   align-self: center;
+}
+
+.gif{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+ 
+}
+
+.loading{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 50px;
+  margin-top: 0px;
+  width: 550px;
+  
+  
+}
+.dots{
+  display: inline;
+  width: 10%;
+  margin-top:16px;
+  margin-left: 3px;
 }
