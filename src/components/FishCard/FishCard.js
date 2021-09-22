@@ -47,11 +47,14 @@ function FishCard(props) {
 			<section className='homepageHolder'>
 				{fish.map((fishs) => {
 					return (
-						<div className="card1">
-							<img
-								className='commonImg'
-								src={fishs['Species Illustration Photo'].src}
-								alt={fishs['Species Illustration Photo'].alt}/>
+						<div className='card1'>
+							<div>
+								<img
+									className='commonImg'
+									src={fishs['Species Illustration Photo'].src}
+									alt={fishs['Species Illustration Photo'].alt}
+								/>
+							</div>
 							<h2 className='fishName'>{fishs['Species Name']}</h2>
 						</div>
 					);
