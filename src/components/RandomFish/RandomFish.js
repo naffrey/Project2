@@ -29,10 +29,14 @@ function RandomFish(props) {
 					alt=' animated fishing man reeling'
 				/>
 
-				<p class='loading'>Reeling in your results <img class="dots"
-					src='https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif'
-					alt='loading screen dots'/></p>
-				
+				<p class='loading'>
+					Reeling in your results{' '}
+					<img
+						class='dots'
+						src='https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif'
+						alt='loading screen dots'
+					/>
+				</p>
 			</div>
 		);
 	}
@@ -58,7 +62,6 @@ function RandomFish(props) {
 								<u>Location</u>
 							</h3>
 							<div dangerouslySetInnerHTML={{ __html: fishs.Location }} />
-
 						</div>
 
 						<div className='bio'>

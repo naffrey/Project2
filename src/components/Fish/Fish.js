@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 function Fish(props) {
     const [fish, setFish] = useState([]);
     const {name} = useParams();
-    const url = `https://www.fishwatch.gov/api/species/`;
+    const url = 'https://cors-anywhere.herokuapp.comhttps://www.fishwatch.gov/api/species/';
 
     useEffect(() => {
         fetch(url)
@@ -18,7 +18,7 @@ function Fish(props) {
     }
     return (
         <div>
-            <
+            
             
         </div>
     );
