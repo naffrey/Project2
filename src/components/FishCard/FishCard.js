@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { findRenderedDOMComponentWithClass } from 'react-dom/test-utils';
+import { Link } from 'react-router-dom';
 import  "./FishcardStyle.css"
 
 function FishCard(props) {
 
 	const [fish, setFish] = useState([]);
-	//const {Path} = useParams();
 	const url =
 		'https://cors-anywhere.herokuapp.com/https://www.fishwatch.gov/api/species';
 
@@ -13,9 +12,9 @@ function FishCard(props) {
 		function getData() {
 			fetch(url)
 				.then((res) => res.json())
-				.then((json) => {
-					console.log(json);
-					setFish(json);
+				.then((res) => {
+					console.log(res);
+					setFish(res);
 				})
 				.catch(console.error);
 		}
@@ -45,22 +44,21 @@ function FishCard(props) {
 
     return (
 			<section className='homepageHolder'>
-				{fish.map((fishs) => {
-					return (
-						<div className='card1'>
-							<div>
-								<img
-									className='commonImg'
-									src={fishs['Species Illustration Photo'].src}
-									alt={fishs['Species Illustration Photo'].alt}
-								/>
+				{fish.map((fishs) => (
+					<Link to={fishs.Path} key={fishs.Path}>
+							<div className='card1'>
+								<div>
+									<img
+										className='commonImg'
+										src={fishs['Species Illustration Photo'].src}
+										alt={fishs['Species Illustration Photo'].alt}
+									/>
+								</div>
+								<h2 className='fishName'>{fishs['Species Name']}</h2>
 							</div>
-							<h2 className='fishName'>{fishs['Species Name']}</h2>
-						</div>
-					);
-				})}
+						</Link>
+					))}
 			</section>
-		);
+)
 }
-
 export default FishCard;

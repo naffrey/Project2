@@ -6,11 +6,11 @@ function Header(props) {
 			<div>
 				<header>
 					<div className='logo'>
-						<h1>Logo will go here</h1>
+						<a href='/'><h1>Water Creatures</h1></a>
 					</div>
-					
 					<button className='random'>Random Fish!</button>
 				</header>
+
 				<br />
 			</div>
 		);
