@@ -6,7 +6,7 @@ function FishCard(props) {
 
 	const [fish, setFish] = useState([]);
 	const url =
-		'https://cors-anywhere.herokuapp.com/https://www.fishwatch.gov/api/species';
+		'https://seir-cors-anywhere.herokuapp.com/https://www.fishwatch.gov/api/species';
 
 	useEffect(() => {
 		function getData() {

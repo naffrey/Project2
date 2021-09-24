@@ -5,8 +5,7 @@ import './FishStyle.css';
 function Fish(props) {
 	const [fish, setFish] = useState([]);
 	const {Path} = useParams();
-	const url =
-		`https://cors-anywhere.herokuapp.com/https://www.fishwatch.gov/api/species/${Path}`;
+	const url = `https://seir-cors-anywhere.herokuapp.com/https://www.fishwatch.gov/api/species/${Path}`;
 
 	useEffect(() => {
 		function getData() {
